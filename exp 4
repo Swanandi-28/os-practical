@@ -21,3 +21,9 @@ int main(int argc, char *argv[])
         return 0;
     }
 }
+
+gcc nandu.c -o mymv
+echo "Hii" > nandu1.txt
+cat nandu1.txt
+./mymv nandu1.txt nandu2.txt
+cat nandu2.txt
