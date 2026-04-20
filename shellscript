@@ -1,0 +1,35 @@
+nano ascend.sh
+#!/bin/bash
+
+ps -eo pid,comm,%cpu,%mem --sort=%cpu | head -n10
+
+chmod +x ascend.sh
+./ascend.sh
+-------------------------------
+
+nano mem.sh
+#!/bin/bash
+
+ps -eo pid,comm,%cpu,%mem --sort=-%mem | head -n10
+
+chmod +x mem.sh
+./mem.sh
+-------------------------------
+
+nano user.sh
+#!/bin/bash
+echo "Current User:$(whoami)"
+echo "Login Name:$(logname)"
+
+chmod +x user.sh
+./user.sh
+-------------------------------
+
+nano shell.sh
+#!/bin/bash
+echo "Current Shell: $SHELL"
+echo "Home Directory: $HOME"
+echo "Kernel Version:$(uname -r)"
+chmod +x shell.sh
+./shell.sh
+
