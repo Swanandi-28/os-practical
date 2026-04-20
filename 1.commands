@@ -1,0 +1,62 @@
+Linux commands are instructions used to perform tasks in a shell. These commands are classified into:
+
+🔹 Internal Commands
+
+* Built into the shell (like Bash)
+* Executed directly without external files
+
+🔹 External Commands
+
+* Stored as executable files in directories like /bin, /usr/bin
+* Require system lookup to execute
+
+List of Commands
+
+Internal Commands
+
+1. cd – Change directory
+2. pwd – Display current working directory
+3. echo – Display message/text
+4. alias – Create shortcut for command
+5. exit – Exit the terminal
+⸻
+External Commands
+
+6. ls – List files and directories
+7. mkdir – Create a new directory
+8. touch – Create a new file
+9. cp – Copy files or directories
+10. mv – Move or rename files
+11. grep – Search text in files
+12. rm – Delete files
+13. cat – Create, display, and concatenate files
+
+-----------------------------------------------------
+
+1. pwd  --It gives absolute path to your current location i.e. current working directory.  
+home/nandu
+
+2.mkdir demo  --It creates new directory/ folder.  
+
+3. cd demo   -- It is used to change directory. 
+
+4. touch test.txt   -- To create new files.
+
+5.ls   --It lists the contents of files and directories. 
+test.txt
+
+6.cat > test.txt  -- use to create new file with content
+Hello World
+
+7.cp test.txt copy.txt 
+
+8.mv test.txt new.txt  -- To rename a file from source to destination and To move file from one loc to other location.   
+
+9. echo"swanandi"  --Display a message or variable value
+swanandi
+
+10.rm new.txt  -- remove / delete files.  
+
+11.date  --Print or set the system date and time, display the current time. 
+
+12.whoami  --It gives the username of the computer.

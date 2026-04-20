@@ -1,3 +1,30 @@
+Theory :
+
+•  Definition of fork(): 
+	fork() is a system call used in Unix/Linux to create a new process. 
+•  Parent and Child Process: 
+	The original process is called the parent process. 
+	The newly created process is called the child process. 
+•  Process Creation: 
+	After calling fork(), a duplicate process is created. 
+	Both parent and child execute independently. 
+•  Return Values of fork(): 
+	> 0 → Returned to parent, gives child’s PID 
+	0 → Returned to child process 
+	-1 → Error (process creation failed) 
+•  Execution Behavior: 
+	Both processes start execution from the next line after fork(). 
+	They run concurrently (order of execution is not fixed). 
+•  Process Identification: 
+	getpid() → returns current process ID 
+	getppid() → returns parent process ID 
+•  Memory Handling: 
+	Child process gets a copy of parent’s memory (separate address space). 
+•  Importance of fork(): 
+	Used for multitasking and parallel execution 
+	Fundamental for process management in OS
+------------------------------------------------------------------------------
+
 
 #include <stdio.h>
 #include <unistd.h>

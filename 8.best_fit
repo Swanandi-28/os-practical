@@ -1,0 +1,108 @@
+// Theory //
+Memory Allocation:
+	 It is the process of assigning memory blocks to processes in an operating system.
+Best Fit Strategy:
+   * Allocates the smallest available memory block that is large enough to satisfy the process request.
+   * Searches the entire memory to find the best (closest) fit.
+Working Principle:
+   * Compare process size with all available blocks
+   * Select the block with minimum leftover space
+   * Allocate that block to the process
+Advantages:
+   * Reduces internal fragmentation
+   * Efficient use of memory
+Disadvantages:
+   * Takes more time (needs full search)
+   * Can cause external fragmentation (many small unused blocks)
+Comparison:
+   * Better memory utilization than First Fit
+   * Slower than First Fit due to searching 
+
+------------------------------------------------
+
+//code
+#include <stdio.h>
+
+int main() {
+    int nb, np;
+
+    printf("Enter number of memory blocks: ");
+    scanf("%d", &nb);
+
+    int blockSize[nb], blockUsed[nb];
+
+    for (int i = 0; i < nb; i++) {
+        printf("Enter size of block %d: ", i + 1);
+        scanf("%d", &blockSize[i]);
+        blockUsed[i] = 0; // 0 = free, 1 = allocated
+    }
+
+    printf("\nEnter number of processes: ");
+    scanf("%d", &np);
+
+    int processSize[np], allocation[np];
+    for (int i = 0; i < np; i++) {
+        printf("Enter size of process %d: ", i + 1);
+        scanf("%d", &processSize[i]);
+        allocation[i] = -1; // not allocated
+    }
+
+    // Best Fit Algorithm
+    for (int i = 0; i < np; i++) {
+        int bestIndex = -1;
+        for (int j = 0; j < nb; j++) {
+            if (!blockUsed[j] && blockSize[j] >= processSize[i]) {
+                if (bestIndex == -1 || blockSize[j] < blockSize[bestIndex]) {
+                    bestIndex = j;
+                }
+            }
+        }
+        if (bestIndex != -1) {
+            allocation[i] = bestIndex;
+            blockUsed[bestIndex] = 1;
+        }
+    }
+
+    // Output
+    printf("\nProcess No.\tProcess Size\tBlock No.\tBlock Size\n");
+    for (int i = 0; i < np; i++) {
+        printf("%d\t\t%d\t\t", i + 1, processSize[i]);
+        if (allocation[i] != -1) {
+            printf("%d\t\t%d\n", allocation[i] + 1, blockSize[allocation[i]]);
+        } else {
+            printf("Not Allocated\t-\n");
+        }
+    }
+
+    return 0;
+}
+
+Steps to execute :
+1. Open Terminal
+2. Create a C file
+	nano BestFit.c
+3. Write/Paste your code
+	
+4. Compile the program
+	gcc BestFit.c -o BestFit 
+
+5. Run the program
+	./BestFit
+
+ 
+Enter number of memory blocks: 6
+Enter size of block 1: 100
+Enter size of block 2: 500
+Enter size of block 3: 200
+Enter size of block 4: 300
+Enter size of block 5: 600
+Enter size of block 6: 250
+
+Enter number of processes: 7
+Enter size of process 1: 212
+Enter size of process 2: 417
+Enter size of process 3: 112
+Enter size of process 4: 426
+Enter size of process 5: 95
+Enter size of process 6: 180
+Enter size of process 7: 50

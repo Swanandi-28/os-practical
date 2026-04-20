@@ -1,3 +1,19 @@
+Theory:
+In Linux, system calls are the interface between user programs and the kernel.
+For file operations, system calls allow programs to create, open, read, write, and close files.
+
+🔹 Common File System Calls:
+open() → Opens or creates a file
+read() → Reads data from a file
+write() → Writes data to a file
+close() → Closes the file descriptor
+🔹 Key Concept:
+Files are handled using file descriptors (fd)
+Kernel manages file access and permissions
+These calls provide low-level file handling
+
+------------------------------------------------------------------------------
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <fcntl.h>

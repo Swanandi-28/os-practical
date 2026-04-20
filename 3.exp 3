@@ -1,3 +1,29 @@
+
+A shell script is a collection of commands written in a file that the Linux/Unix shell executes to automate system tasks like process management and system information retrieval.
+
+1. Display top 10 processes in ascending order
+	Processes in Linux can be viewed using the ps command.
+	Sorting is done using sort.
+	Ascending order means arranging values from smallest to largest (e.g., PID, CPU usage).
+	head is used to limit output to the first 10 processes.
+
+2. Display processes with highest memory usage
+	Memory usage is shown using ps with %MEM.
+	Processes are sorted in descending order to get highest memory usage.
+	head displays top memory-consuming processes.
+
+3. Display current logged-in user and log name
+	whoami gives the current user.
+	who shows all logged-in users.
+	$LOGNAME or logname gives login name.
+
+4. Display current shell, home directory, kernel version
+	$SHELL → current shell
+	$HOME → home directory
+	uname -r → kernel version
+    
+---------------------------------------------
+
 nano ascend.sh
 #!/bin/bash
 

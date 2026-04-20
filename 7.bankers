@@ -1,3 +1,28 @@
+Theory:-
+
+Deadlock:
+	A situation where processes are stuck waiting for resources held by each other, and none can proceed.
+Deadlock Avoidance:
+	The system avoids deadlock by checking resource allocation before granting requests.
+Banker’s Algorithm:
+	A deadlock avoidance algorithm used in operating systems.
+	Ensures the system always remains in a safe state.
+Safe State:
+	A state where all processes can complete execution without leading to deadlock.
+Key Idea:
+	Before allocating resources, the system checks whether the allocation will keep the system safe.
+Data Structures Used:
+	Available: Available resources
+	Max: Maximum demand of each process
+	Allocation: Resources currently allocated
+	Need: Remaining resource requirement (Need = Max − Allocation)
+Working:
+	Check if a process can complete with available resources
+	Release its resources after completion
+	Repeat until all processes finish or deadlock is detected
+    
+  -----------------------------------------------------------------
+
 #include <stdio.h>
 
 int main() {

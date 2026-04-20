@@ -1,3 +1,16 @@
+Theory:
+
+The Linux mv command is used to move or rename files and directories. Internally, it uses system calls (kernel APIs) like:
+
+rename() → to rename or move files within the same filesystem
+link() and unlink() → used when moving across different filesystems
+🔹 Key Concept:
+Shell commands interact with the kernel through system calls
+mv does not copy file contents; it updates file references (in most cases)
+If source and destination are on different filesystems, it performs copy + delete
+
+-----------------------------------------------------------------------------
+
 nano nandu.c
 
 #include<stdio.h>

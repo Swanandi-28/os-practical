@@ -1,3 +1,25 @@
+Theory :
+A shell script is a file containing a series of commands written for the Unix/Linux shell (like Bash) that automates tasks. It can perform calculations such as addition, subtraction, multiplication, and division using built-in arithmetic operations.
+
+Key Points:
+	Shell scripts use commands like expr, $(( )), or bc for calculations.
+	Variables store numbers, and operations are performed on them.
+	Arithmetic expansion $(( )) is the most commonly used method because it is simple and efficient.
+	User input can be taken using read command.
+	Output is displayed using echo.
+Basic Concept:
+	Take input numbers from the user.
+	Store them in variables.
+	Perform arithmetic operations.
+	Display the result.
+Example Operations:
+	Addition: c=$((a + b))
+	Subtraction: c=$((a - b))
+	Multiplication: c=$((a * b))
+	Division: c=$((a / b))
+
+-------------------------------------------------- 
+    
 nano demo.sh
 
 #!/bin/bash
