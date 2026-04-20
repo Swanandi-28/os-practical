@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <sys/wait.h>
+
+int main() {
+    int fd;
+    char buffer[50];
+
+// 1. open() a file
+fd = open("file.txt", O_CREAT | O_RDWR, 0644);  -- file.txt=nandu.txt
+
+// 2. write() to the file
+ write(fd, "Hello Linux", 11);
+
+ // move pointer to beginning
+    lseek(fd, 0, SEEK_SET);
+
+// 3. read() from the file
+read(fd, buffer, 11);
+
+ // print output
+printf("Data: %s\n", buffer);
+
+ // 4. close() - close file
+close(fd);
+
+// fork() – create child process
+    if (fork() == 0)
+    {
+        printf("\nChild Process ID:  %d\n", getpid());
+    }
+    else
+    {
+        wait(NULL);
+        printf("Parent Process ID: %d\n", getpid());
+    }
+
+return 0;
+}
+
+Steps to execute :
+1. Open Terminal
+2. Create a C file
+   nano file_syscall.c
+3. Write/Paste your code
+
+4. Compile the program
+	gcc file_syscall.c -o file_syscall
+
+5. Run the program
+	./file_syscall
